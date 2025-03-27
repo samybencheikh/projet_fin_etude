@@ -22,7 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($result->num_rows == 1) {
         $row = $result->fetch_assoc();
 
-        // Comparaison directe du mot de passe (PAS SÉCURISÉ, mais tu ne veux pas de hash)
         if ($password === $row['password']) {
             $_SESSION['traitantID'] = $row['traitantID'];
             $_SESSION['nom'] = $row['nom_prénoms_agent_traitant'];
